@@ -1,0 +1,89 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #e9f3ff, #ffffff);
+  margin: 0;
+  color: #222;
+}
+
+.top-bar {
+  background: #002b5c;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 60px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.patient-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.patient-info h1 {
+  font-size: 2.2em;
+  margin-bottom: 5px;
+  color: #003366;
+}
+
+.critical-high {
+  color: #c62828;
+  animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+
+.medications {
+  background: #dce6ff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.vitals {
+  background: #f2fff0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px rgba(255,0,0,0.1); }
+  50% { box-shadow: 0 0 20px rgba(255,0,0,0.3); }
+  100% { box-shadow: 0 0 5px rgba(255,0,0,0.1); }
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  color: #666;
+  padding: 10px;
+  background: #f4f4f4;
+}

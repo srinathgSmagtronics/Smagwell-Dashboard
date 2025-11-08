@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smagtronics Smart Bed Dashboard | Healthcare IoT</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-dark: #0a192f;
+  --accent: #00bcd4;
+  --accent-glow: #1de9b6;
+  --text-light: #e8eef7;
+  --section-bg: rgba(255,255,255,0.05);
+}
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, var(--bg-dark), #061020);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(0,74,173,0.85);
+  box-shadow: 0 0 15px rgba(0,188,212,0.3);
+}
+header img {
+  max-height: 70px;
+  filter: drop-shadow(0 0 8px rgba(0,188,212,0.5));
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px 100px;
+  position: relative;
+}
+.hero h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.6em;
+  color: var(--accent-glow);
+  text-shadow: 0 0 15px rgba(29,233,182,0.8);
+  margin-bottom: 15px;
+}
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 40px;
+  font-size: 1.2em;
+  color: #bcd0e0;
+}
+
+/* Animated vitals background */
+.vital-wave {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(0,188,212,0.3),
+    rgba(0,188,212,0.7) 2px,
+    transparent 3px,
+    transparent 8px
+  );
+  animation: moveWave 6s linear infinite;
+  opacity: 0.3;
+}
+@keyframes moveWave {
+  from {background-position: 0 0;}
+  to {background-position: 200px 0;}
+}
+
+/* Features */
+section {
+  padding: 60px 30px;
+  text-align: center;
+}
+section h2 {
+  font-family: "Orbitron", sans-serif;
+  color: var(--accent-glow);
+  margin-bottom: 30px;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+.feature {
+  background: var(--section-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,188,212,0.15);
+  transition: transform 0.3s;
+}
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0,188,212,0.3);
+}
+.feature img {
+  width: 70px;
+  margin-bottom: 12px;
+}
+.feature h3 {
+  margin: 8px 0;
+  color: var(--accent);
+}
+.feature p {
+  font-size: 0.95em;
+  color: #cfd7e0;
+}
+
+/* Counter-style Animated Metrics */
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  background: rgba(255,255,255,0.05);
+  padding: 50px 20px;
+}
+.metric-box {
+  text-align: center;
+  width: 200px;
+}
+.metric {
+  font-family: "Orbitron", monospace;
+  font-size: 2.4em;
+  color: var(--accent-glow);
+  text-shadow: 0 0 10px rgba(0,188,212,0.7);
+}
+.metric-label {
+  color: #bcd0e0;
+  margin-top: 8px;
+}
+
+/* Demo Section */
+.demo {
+  background: rgba(255,255,255,0.05);
+  padding: 50px 20px;
+}
+.demo video, .demo iframe {
+  width: 90%;
+  max-width: 800px;
+  height: 450px;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,188,212,0.2);
+}
+
+/* CTA */
+.cta {
+  background: #002b5b;
+  padding: 60px 30px;
+  text-align: center;
+  color: #fff;
+}
+.cta h2 { color: var(--accent-glow); }
+.cta a {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+.cta a:hover { background: var(--accent-glow); }
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(0,74,173,0.85);
+  font-size: 0.9em;
+  color: #b5cbe0;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="static/smagtronics_logo.png" alt="Smagtronics Logo">
+  <img src="static/smagwell_logo.png" alt="Smagwell Beds Logo">
+</header>
+
+<section class="hero">
+  <h1>Smagtronics Smart Bed Dashboard</h1>
+  <p>Real-time patient monitoring with predictive alerts, automated reminders, and intelligent nurse support — redefining modern care.</p>
+  <div class="vital-wave"></div>
+</section>
+
+<section>
+  <h2>Key Features</h2>
+  <div class="features">
+    <div class="feature">
+      <img src="static/vitals_icon.png" alt="Vitals">
+      <h3>Live Vitals Display</h3>
+      <p>Dynamic visualization of key parameters — SpO₂, HR, RR, and Temperature — on a real-time digital dashboard.</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/fluency/96/box-important.png" alt="Alerts">
+      <h3>Predictive Alerts</h3>
+      <p>AI-based logic triggers early alarms for oxygen dips, fever spikes, or irregular heart rates.</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/fluency/96/appointment-reminders.png" alt="Reminders">
+      <h3>Care Reminders</h3>
+      <p>Automatic nurse notifications for hydration, IV drip checks, repositioning, and sanitization tasks.</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/fluency/96/tasklist.png" alt="Logs">
+      <h3>Smart Alarm Logs</h3>
+      <p>All alerts and reminders are logged with timestamps — ensuring accountability and continuity of care.</p>
+    </div>
+  </div>
+</section>
+
+<section class="metrics">
+  <div class="metric-box">
+    <div class="metric" data-target="99.7">0</div>
+    <div class="metric-label">Uptime Accuracy (%)</div>
+  </div>
+  <div class="metric-box">
+    <div class="metric" data-target="0.4">0</div>
+    <div class="metric-label">Alert Response Time (sec)</div>
+  </div>
+  <div class="metric-box">
+    <div class="metric" data-target="300">0</div>
+    <div class="metric-label">Smart Reminders Triggered</div>
+  </div>
+  <div class="metric-box">
+    <div class="metric" data-target="150">0</div>
+    <div class="metric-label">Beds Connected</div>
+  </div>
+</section>
+
+<section class="demo">
+  <h2>See It in Action</h2>
+  <video autoplay muted loop controls>
+    <source src="static/demo_dashboard.mp4" type="video/mp4">
+    Your browser does not support video playback.
+  </video>
+</section>
+
+<section class="cta">
+  <h2>Smagtronics — Where Care Meets Intelligence</h2>
+  <p>Automating healthcare to empower nurses, save lives, and redefine hospital efficiency.</p>
+  <a href="mailto:info@smagtronics.com">📩 Contact Us for Demo</a>
+</section>
+
+<footer>
+  © 2025 Smagtronics | Smart Automation Group | #HealthcareInnovation
+</footer>
+
+<script>
+// ===== Animated Metrics =====
+document.addEventListener("DOMContentLoaded", () => {
+  const metrics = document.querySelectorAll(".metric");
+  const speed = 100;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        metrics.forEach(metric => {
+          const target = +metric.getAttribute("data-target");
+          const update = () => {
+            const val = +metric.innerText;
+            const inc = target / speed;
+            if (val < target) {
+              metric.innerText = (val + inc).toFixed(1);
+              setTimeout(update, 20);
+            } else {
+              metric.innerText = target;
+            }
+          };
+          update();
+        });
+        observer.disconnect();
+      }
+    });
+  });
+  observer.observe(document.querySelector(".metrics"));
+});
+</script>
+
+</body>
+</html>
